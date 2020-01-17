@@ -43,7 +43,7 @@ while next == 0
    end
 end
 
-% close all maze doors - this gives problems with solenoid box
+% close all maze doors
 pause(0.25)
 writeline(s,[doorFuns.centralClose doorFuns.sbLeftClose ...
     doorFuns.sbRightClose doorFuns.tLeftClose doorFuns.tRightClose]);
