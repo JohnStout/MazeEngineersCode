@@ -1,2 +1,2 @@
 # MazeEngineersCode
-This code was written to interface with the maze engineers hardware and control an automated T-maze
+I wrote this code to interface with the maze engineers hardware and control an automated T-maze
