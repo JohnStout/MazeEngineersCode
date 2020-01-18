@@ -92,27 +92,6 @@ for triali = 1:numTrials
             next = 1;                          % break out of the loop
         end
     end
-
-
-    %{
-    % release pellets while rat is on the treadmill
-    if triali > 2
-        % apply reward on correct trials
-        if trajectory_text{triali-1} == 'L' && trajectory_text{triali-2} == 'R'
-            % reward dispensers need about 3 seconds to release pellets
-            for rewardi = 1:pellet_count
-                writeline(s,rewFuns.right)
-                pause(3)
-            end
-        elseif trajectory_text{triali-1} == 'R' && trajectory_text{triali-2} == 'L'
-            % reward dispensers need about 3 seconds to release pellets
-            for rewardi = 1:pellet_count
-                writeline(s,rewFuns.left)
-                pause(3)
-            end
-        end 
-    end
-    %}
     
     % t-beam
     % check which direction the rat turns at the T-junction
@@ -132,6 +111,7 @@ for triali = 1:numTrials
             pause(0.25)
             writeline(s,doorFuns.sbRightOpen)
             
+            % conditional pellet release
             if triali > 1 && trajectory_text{triali} == 'R' && trajectory_text{triali-1} == 'L'
                 % reward dispensers need about 3 seconds to release pellets
                 for rewardi = 1:pellet_count
@@ -155,6 +135,7 @@ for triali = 1:numTrials
             pause(0.25)            
             writeline(s,doorFuns.sbLeftOpen)
             
+            % conditional pellet release
             if triali > 1 && trajectory_text{triali} == 'L' && trajectory_text{triali-1} == 'R'
                 % reward dispensers need about 3 seconds to release pellets
                 for rewardi = 1:pellet_count
@@ -167,10 +148,6 @@ for triali = 1:numTrials
             next = 1;
         end
     end    
-    
-    % Reward zone and eating
-    % send to netcom 
-    
     
     % return arm
     next = 0;
