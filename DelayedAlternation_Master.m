@@ -24,7 +24,7 @@ rewFuns = RewardActions;
 irBreakNames = irBreakLabels;
 
 %% some parameters set by the user
-set_speed    = treadSpeeds.ten; % seven meters per minute
+set_speed    = treadSpeeds.ten; % ten meters per minute
 delay_length = 5; % seconds
 numTrials    = 6;
 pellet_count = 1;
